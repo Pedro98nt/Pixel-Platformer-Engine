@@ -1,0 +1,36 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #191028;
+  }
+  
+  canvas {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: 1.2s ease-in 0s 1 sepia;
+  
+    /* Leaving the scaling to the browser is far from pixel-perfect!
+       I'm tracking the resize event to determine the integer factor
+       of the size I can fit on the page. This **should** result in
+       even pixel sizes across the canvas. */
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+  
+  /* a really fancy background to demonstrate how you might use CSS with canvas */
+  #bg { background: linear-gradient(0deg, #f5f4eb -15%, #b0a9de 20%, #9ec2e8 25%, #7664fe 70%, #453e78 90%, #191028 110%); }
+  
+  img { display: none; } /* hiding the spritesheets */
+  
+  @keyframes sepia {
+    from { filter: sepia(100%); }
+    to { filter: sepia(0); }
+  }
+  
+  /* bearror logo ✖ᴥ✖ */
+  svg { position: fixed; bottom: 10px; right: 10px; fill: #888; opacity: 0.2; }
